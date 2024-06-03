@@ -1,0 +1,20 @@
+public class MoveUp : MoveBase
+{
+    #region Constructors
+    public MoveUp(IBoard board) : base(board)
+    {
+    }
+    #endregion Constructors
+
+    #region OverrideMethods
+    public override string Move(IPlayer player)
+    {
+        string position = $"{ParseColumn(player.Position)}{ParseRow(player.Position) + 1}";
+
+        if (board.IsPositionValid(position))
+            return position;
+
+        return player.Position;
+    }
+    #endregion OverrideMethods
+}
