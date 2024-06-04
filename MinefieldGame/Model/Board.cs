@@ -70,7 +70,7 @@ public class Board : IBoard
             int randomRow = random.Next(1, rows);
             int randomCol = random.Next(1, cols);
             string key = $"{(char)(randomCol + 64)}";
-            Console.WriteLine($"Placing mine at position {key}{randomRow}");
+            Console.WriteLine($"Placing mine at position {key}{randomRow + 1}");
             fields[key][randomRow].HasMine = true;
         }
     }
